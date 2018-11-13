@@ -1,0 +1,192 @@
+@import "spin";
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "tooltip";
+@import "fontawesome/fontawesome.scss";
+@import "fontawesome/solid.scss";
+@import "fontawesome/brands.scss";
+
+#content {
+  position: relative;
+  color: white;
+  h1 {
+    @include h1(white);
+    margin-top: 20%;
+  }
+  h4 {
+    @include h4;
+    opacity: .6;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  li {
+    font-family: Handlee;
+    font-size: $menuSize;
+  }
+}
+#certyfikaty {
+  display: none;
+  position: relative;
+  width: 100%;
+  h1 {
+    @include h1($color1);
+  }
+  .card {
+    width: 70%;
+    min-height: 520px;
+    height: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+    background-color: white;
+  }
+  table {
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 80%;
+    font-family: Helvetica;
+    a {
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $color1;
+        -webkit-text-decoration-color: $color1; //safari
+      }
+    }
+  }
+  i {
+    @include arrowBack;
+  }
+}
+#projekty {
+  display: none;
+  position: relative;
+  width: 100%;
+  h1 {
+    @include h1($color3);
+  }
+  h4 {
+    @include h4;
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 60px;
+    font-size: 150%;
+    span {
+      opacity: .7;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  ul {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  li {
+    @include grid(8, 2%);
+  }
+  i {
+    @include arrowBack;
+  }
+  a {
+    display: block;
+    color: $backgroundColor;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+#color1 {
+  @include menuColor($color1);
+}
+#color2 {
+  @include menuColor($color2);
+}
+#color3 {
+  @include menuColor($color3);
+}
+
+#icons {
+  text-align: center;
+  margin-top: 15px;
+  i {
+    color: white;
+    font-size: 55px;
+    padding: 0 40px;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
+.nav {
+  padding-top: 15px;
+}
+//tooltip
+.has-tooltip {
+    @include has-tooltip($tooltip-transition-in-duration: .3s);
+    span {
+      text-align: center;
+    }
+}
+.tooltip {
+    min-width: 10em;
+    padding: .5em .75em;
+}
+.tooltip-without-border {
+    @include tooltip(
+        $tooltip-background-color: transparent,
+        $tooltip-arrow-base: 1em,
+        $tooltip-arrow-length: .5em,
+        $tooltip-transition-out-duration: .2s
+    );
+    color: #fff;
+}
+//end tooltip
+.pro_java {
+  @include projectsBox($color1, 150px, 50px);
+  @include mQ(1200px) {
+    font-size: 80%;
+  }
+}
+.pro_www {
+  @include projectsBox($color2, 150px, 50px);
+  @include mQ(1200px) {
+    font-size: 80%;
+  }
+}
+.pro_gis {
+  @include projectsBox($color3, 150px, 50px);
+  @include mQ(1200px) {
+    font-size: 80%;
+  }
+}
+.java_h4 {
+  color: lighten($color1, 15);
+}
+.www_h4 {
+  color: lighten($color2, 15);
+}
+.gis_h4 {
+  color: lighten($color3, 15);
+}
+#menu {
+  display: none;
+  color: white;
+  font-family: Gruppo;
+  li {
+    background-color: darken($backgroundColor, 10);
+    border: 1 px solid darken($backgroundColor, 20);
+    padding: 5px 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: darken($backgroundColor, 5);
+    }
+  }
+  .menu2 {
+    color: $color1
+  }
+  .menu3 {
+    color: $color3;
+  }
+}

@@ -1,0 +1,19 @@
+@import "variables";
+
+html, body {
+  background-color: $backgroundColor!important;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+li {
+	list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,66 @@
+@import "variables";
+
+@mixin menuColor($color) {
+  color: $color;
+  border: 1px solid $backgroundColor;
+  &:hover {
+    border: 1px solid darken($color, 20);
+    border-radius: 5px;
+    color: darken($color, 20);
+  }
+}
+@mixin h1($color){
+  text-align: center;
+  font-family: Gruppo;
+  font-size: $mainText;
+  cursor: default;
+  color: $color;
+}
+@mixin h4 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Gruppo;
+  font-size: ($mainText/6);
+  cursor: default;
+}
+@mixin grid($cols, $mgn){
+  float: left;
+  width: ((100% - (($cols - 1) * $mgn)) / $cols );
+  margin-right: $mgn;
+  margin-bottom: $mgn;
+  &:nth-child(#{$cols}n){
+    margin-right: 0;
+  }
+}
+
+@mixin arrowBack {
+  font-size: 50px;
+  color: $color2;
+  float: left;
+  margin: 30px;
+  opacity: .5;
+  cursor: pointer;
+  &:hover {
+    opacity: .9;
+  }
+}
+@mixin projectsBox($color, $width, $height) {
+  width: $width;
+  text-align: center;
+  height: $height;
+  padding-top: $height/4.5;
+  // padding-top: $height;
+  // padding-bottom: $height;
+  display: block;
+  cursor: pointer;
+  background-color: darken($color, 20);
+  &:hover {
+    background-color: $color;
+  }
+}
+@mixin mQ($arg) {
+  @media screen and (max-width: $arg) {
+    @content;
+  }
+}
