@@ -1,4 +1,4 @@
-# [Live Demo](http://majer.tangun.pl)
+# [Live version](http://majer.tangun.pl)
 
 * HTML5
 * CSS3
